@@ -165,7 +165,7 @@ model = ViT(
     channels=3,
 ).to(device)
 
-# model=VIT_B16_224().to(device) # the model could be the ViT model
+model=VIT_B16_224().to(device) # the model could be the ViT model
 
 print("----------------tp1------------------------")
 # Training
