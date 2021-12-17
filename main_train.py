@@ -212,8 +212,8 @@ for epoch in range(epochs):
             epoch_val_loss += val_loss / len(test_loader)
             if epoch_val_accuracy>=0.96:
                 # torch.save(model, './models/vit_model'+str(epoch)+'.pth')
-                # torch.save(model, './models/vit_model.pth')
-                torch.save(model, './models/vit_model_linear.pth')
+                torch.save(model, './models/vit_model.pth')
+                # torch.save(model, './models/vit_model_linear.pth')
 
     print(
         f"Epoch : {epoch+1} - loss : {epoch_loss:.4f} - acc: {epoch_accuracy:.4f}- val_loss : {epoch_val_loss:.4f} - val_acc: {epoch_val_accuracy:.4f}\n"
