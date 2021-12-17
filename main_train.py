@@ -77,11 +77,13 @@ random_idx = np.random.randint(1, len(train_list), size=4)
 
 # Split
 
+# the following part should be valided if we need the valid_list is different from the train_list
 # train_list, valid_list = train_test_split(train_list, 
 #                                           test_size=0.2,
 #                                           stratify=labels,
 #                                           random_state=seed)
 # print("---train_list2=",train_list)
+valid_list=train_list
 
 print(f"Train Data: {len(train_list)}")
 # print(f"Validation Data: {len(valid_list)}")
