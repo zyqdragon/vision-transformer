@@ -28,7 +28,7 @@ print(f"Torch: {torch.__version__}")
 
 # Training settings
 batch_size = 2
-epochs = 620
+epochs = 60
 lr = 3e-5
 gamma = 0.7
 seed = 12
@@ -165,7 +165,7 @@ model = ViT(
     channels=3,
 ).to(device)
 
-model=VIT_B16_224().to(device)
+# model=VIT_B16_224().to(device) # the model could be the ViT model
 
 print("----------------tp1------------------------")
 # Training
@@ -197,12 +197,10 @@ for epoch in range(epochs):
         epoch_accuracy += acc / len(train_loader)
         epoch_loss += loss / len(train_loader)
 
-    
     with torch.no_grad():
         epoch_val_accuracy = 0
         epoch_val_loss = 0
         for data, label in test_loader:
-            print()
             data = data.to(device)
             label = label.to(device)
 
@@ -214,8 +212,8 @@ for epoch in range(epochs):
             epoch_val_loss += val_loss / len(test_loader)
             if epoch_val_accuracy>=0.96:
                 # torch.save(model, './models/vit_model'+str(epoch)+'.pth')
-                torch.save(model, './models/vit_model.pth')
-    
+                # torch.save(model, './models/vit_model.pth')
+                torch.save(model, './models/vit_model_linear.pth')
 
     print(
         f"Epoch : {epoch+1} - loss : {epoch_loss:.4f} - acc: {epoch_accuracy:.4f}- val_loss : {epoch_val_loss:.4f} - val_acc: {epoch_val_accuracy:.4f}\n"
