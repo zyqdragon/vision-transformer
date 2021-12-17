@@ -1,5 +1,5 @@
 # vision-transformer-from-scratch
-This repository includes several versions of different vision transformers from scratch so that  one beginner can understand the theory of vision transformer easily. The basic transformer,the linformer transformer and the swin transformer are all trained and tested.
+This repository includes several kinds of vision transformers from scratch so that  one beginner can understand the theory of vision transformer easily. The basic transformer,the linformer transformer and the swin transformer are all trained and tested.
 
 Requirements:
 PyTorch (>= 1.6.0);
