@@ -19,7 +19,7 @@ model=VIT_B16_224().to(device)
 
 if __name__ == '__main__':
     input_size = 224
-    model=torch.load('./models/vit_model69.pth')
+    model=torch.load('./models/vit_model.pth')
     transform_valid = transforms.Compose([
        transforms.Resize((224, 224)),
        transforms.ToTensor()])
