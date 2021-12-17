@@ -40,7 +40,7 @@ model = ViT(
 if __name__ == '__main__':
     input_size = 224
     model=torch.load('./models/vit_model.pth')
-    model=torch.load('./models/vit_model_linear.pth')
+   #  model=torch.load('./models/vit_model_linear.pth')
     transform_valid = transforms.Compose([
        transforms.Resize((224, 224)),
        transforms.ToTensor()])
