@@ -22,7 +22,9 @@ This repository includes several kinds of vision transformers from scratch so th
 - https://www.kaggle.com/hannes82/vision-transformer-trained-from-scratch-pytorch;
 
 # Problem and solution:
-- ‘tqdm_notebook‘ object has no attribute’sp‘的一种解决方法
-- 在stackoverflow上找到了答案：是因为你禁用了进度条，之后还要调用它的原因。
-- 解决：
-- 在你的tqdm里加上disable=True
+‘tqdm_notebook‘ object has no attribute’sp‘的一种解决方法
+在stackoverflow上找到了答案：是因为你禁用了进度条，之后还要调用它的原因。
+解决：
+在你的tqdm里加上disable=True
+# Complete dataset:
+链接: https://pan.baidu.com/s/1p9Tqp57k7vEUoRA3iIY4Ow?pwd=47fb 提取码: 47fb 
