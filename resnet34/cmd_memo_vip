@@ -1,0 +1,24 @@
+# 被检测图像的高宽比需要为9：16；在detect.py文件中需要设置与16对应的32的倍数，比如32*48=1536；设置代码如下所示：
+parser.add_argument('--imgsz', '--img', '--img-size', nargs='+', type=int, default=[1536], help='inference size h,w')
+
+docker build -f /var/nginx_build/Dockerfile .
+docker build -t pedestron:v0 .
+
+-f 显示指定构建镜像的 Dockerfile 文件（Dockerfile 可不在当前路径下），
+   如果不使用 -f，则默认将上下文路径下的名为 Dockerfile 的文件认为是构建镜像的 "Dockerfile" 。
+
+docker commit ceb92bbb04f7 tinyobject:v0   
+docker run -it -d -v /宿主机目录:/容器目录 镜像名 /bin/bash
+
+nvidia-docker run -it -d -v /home/slamg3/yolo_tiny_object:/home/workdisk --name=tinyobject pytorch/pytorch:1.10.0-cuda11.3-cudnn8-devel /bin/bash
+
+python val.py --weights ./weights/yolov5l-xs-1.pt --img 2016 --data ./data/VisDrone.yaml --augment --save-txt  --save-conf --task val --batch-size 2 --verbose --name v5l-xs
+
+# detect the objects command in images, this is the most important command
+python detect.py
+python detect_main.py
+
+# show the annotation of validation images
+python annotation_verification.py
+
+nvidia-docker run -it -d -v /home/slamg3/yolo_tiny_object:/home/workdisk --name=tinyobject pytorch/pytorch:1.10.0-cuda11.3-cudnn8-devel /bin/bash
